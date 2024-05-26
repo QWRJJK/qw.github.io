@@ -1,134 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
   <head>
     <meta charset="UTF-8" />
     <meta
-      http-equiv="X-UA-Compatible"
-      content="IE=edge" />
-    <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0" />
-    <title>重要的事写下来吧</title>
+    <title>雷伊的图片存储库</title>
     <style>
       body {
-        background-image: url(https://pic2.zhimg.com/80/v2-4cc61328707b6e0df365397514702855_1440w.jpg);
-        background-repeat: no-repeat;
-        display: flex;
-        justify-content: center;
-        background-size: 100% 100%;
-        height: 100vh;
+        background-color: whitesmoke;
         margin: 0px;
       }
-      .a {
+      .flex {
         display: flex;
-        align-items: center;
-        z-index: 1;
       }
-      #shurukuang {
-        border: 0;
-        border-bottom: 2px solid #fff;
-        padding: 4px 2px;
-        display: block;
-        background: 0;
-        line-height: 1.5;
-        outline: none;
-        text-align: center;
-        border-radius: 0;
-        color: rgb(117 117 117);
-        font-size: 2rem;
-        max-width: 90%;
+      .column {
+        flex-direction: column;
       }
-      #anniu {
-        margin-left: -50px;
-        margin-right: 10px;
-        color: rgb(95, 95, 95);
-        border-radius: 50%;
-        height: 40px;
-        width: 40px;
-        text-align: center;
-        line-height: 30px;
-        cursor: pointer;
-      }
-      #txt {
-        display: flex;
+      .center {
         justify-content: center;
-        font-size: 60px;
-        z-index: 2;
-        position: fixed;
-        color: azure;
-        margin: 105px 50px 0px 0px;
-        transition: all 0.5s;
+        align-items: center;
       }
-      @media (max-width: 800px) {
-        .tp {
-          height: 100vh;
-          background-image: url(https://ts1.cn.mm.bing.net/th/id/R-C.dda2e9d3817a2b844b7310073a9ab8d6?rik=kKysSX8zSoxinw&riu=http%3a%2f%2fstatic.cntonan.com%2fuploadfile%2f2019%2f0214%2f20190214104247sohunmboz5g.jpg&ehk=t96leg9V%2bQ%2fMVR%2bQQXOyteIrOPCNvJVrEIUJ2NG2Qv0%3d&risl=&pid=ImgRaw&r=0);
-        }
+      .margin{
+        margin: 20px;
       }
+      
     </style>
   </head>
-  <body
-    class="tp"
-    onload="startTime()">
-    <div id="txt"></div>
-    <div class="a">
-      <input
-        placeholder="最重要的事？"
-        id="shurukuang" />
-      <span
-        id="anniu"
-        onclick="change()"
-        >✔</span
-      >
-      <script>
-        let youshi = false;
-
-        function change() {
-          let anniu = document.getElementById("anniu");
-          let shurukuang = document.getElementById("shurukuang");
-
-          if (youshi) {
-            youshi = false;
-            anniu.innerText = "✔";
-            shurukuang.style.borderBottomColor = "#fff";
-            shurukuang.value = "";
-            shurukuang.readOnly = false;
-            window.localStorage.removeItem("shi");
-          } else {
-            youshi = true;
-            anniu.innerText = "✘";
-            shurukuang.style.borderBottomColor = "transparent";
-            shurukuang.readOnly = true;
-            window.localStorage.setItem("shi", shurukuang.value);
-          }
-        }
-
-        let data = window.localStorage.getItem("shi");
-        if (data) {
-          document.getElementById("shurukuang").value = data;
-          change();
-        }
-
-        function startTime() {
-          var today = new Date();
-          var h = today.getHours();
-          var m = today.getMinutes();
-          var s = today.getSeconds(); // 在小于10的数字前加一个‘0’
-          m = checkTime(m);
-          s = checkTime(s);
-          document.getElementById("txt").innerHTML =
-            h + ":" + m + ":" + s;
-          t = setTimeout(function () {
-            startTime(), 500;
-          });
-        }
-        function checkTime(i) {
-          if (i < 10) {
-            i = "0" + i;
-          }
-          return i;
-        }
-      </script>
+  <body>
+    <div class="flex column">
+      <!--页面标题-->
+      <div
+        style="
+          width: 99%;
+          height: 100px;
+          font-size: 50px;
+          background-color: black;
+          color: white;
+        "
+        class="flex center">
+        雷伊的图片存储库
+      </div>
+      <!--图片位置-->
+      <div class="flex column">
+      <div >
+        <img
+          src="https://p.qqan.com/up/2021-2/16138782426739637.jpg"
+          alt="头像"
+          width="200px" />
+      </div>
+      <!--第一行-->
+      <div class="flex">
+      <div class="margin">
+        <img
+          src="https://wallpaperm.cmcm.com/150ea9a9fde204db5e7018817bb54ca7.jpg"
+          alt="男刀"
+          width="500px" />
+      </div>
+      <div class="margin">
+        <img src="https://img-baofun.zhhainiao.com/fs/36983435a642d10648ff3cc5ee0763f2.jpg" alt="诺克"
+        width="500">
+      </div>
+      <div class="margin">
+        <img src="https://www.niulol.com/d/file/bigpic/2021/04/29/17/ic241ay3hg2428.jpg" alt=""
+        width="500">
+      </div>
+      </div>
+      <!--第二行-->
+      <div class="flex">
+      <div class="margin">
+        <img
+          src="https://wallpaperm.cmcm.com/48605e7403664f634bf16df3ec5479d1.jpg"
+          alt="拉克丝"
+          width="500px" />
+      </div>
+      <div class="margin">
+        <img src="https://img-baofun.zhhainiao.com/fs/ed87121b0d7112ee7f70afd42f80a36c.jpg" alt="提莫"
+        width="500">
+      </div>
+      <div class="margin">
+        <img src="https://img-baofun.zhhainiao.com/fs/1d548cd165d70f86779e70273038cdfc.jpg" alt="卡莎"
+        width="500">
+      </div>
+      </div>
+      <!--第三行-->
+        <div class="flex">
+      <div class="margin">
+        <img
+          src="https://a-static.besthdwallpaper.com/league-of-legends-galaxy-slayer-zed-wallpaper-1440x900-25269_4.jpg"
+          alt="劫"
+          width="500px" />
+      </div>
+      <div class="margin">
+        <img src="https://n.sinaimg.cn/sinacn19/635/w980h455/20180516/46a2-harvfht9832881.jpg" alt="亚索"
+        width="500" height="310">
+      </div>
+      <div class="margin">
+        <img src="" alt=""
+        width="500">
+      </div>
+      </div>
+      <!--第四行-->
+        <div class="flex">
+      <div class="margin">
+        <img
+          src=""
+          alt=""
+          width="500px" />
+      </div>
+      <div class="margin">
+        <img src="" alt=""
+        width="500">
+      </div>
+      <div class="margin">
+        <img src="" alt=""
+        width="500">
+      </div>
+      </div>
+      <!--第五行-->
+        <div class="flex">
+      <div class="margin">
+        <img
+          src=""
+          alt=""
+          width="500px" />
+      </div>
+      <div class="margin">
+        <img src="" alt=""
+        width="500">
+      </div>
+      <div class="margin">
+        <img src="" alt=""
+        width="500">
+      </div>
+      </div>
+      
+    
     </div>
   </body>
 </html>
